@@ -8,9 +8,9 @@
 require 'faker'
 
 20.times do 
- part = Part.create!(part_number:Faker::Device.model_name)
+ part = Part.create!(part_number:Faker::Device.model_name, part_id:Faker::Number.between(1, 20))
 end
 
 10.times do 
-	assembly = Assembly.create!(name:Faker::Games::Pokemon.name)
+	assembly = Assembly.create!(name:Faker::Games::Pokemon.name, assembly_id:Faker::Number.between(1, 20))
 end

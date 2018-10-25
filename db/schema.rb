@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_25_141127) do
+ActiveRecord::Schema.define(version: 2018_10_25_160145) do
 
   create_table "assemblies", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "{:foreign_key=>true}_id"
+    t.index ["{:foreign_key=>true}_id"], name: "index_assemblies_on_{:foreign_key=>true}_id"
   end
 
   create_table "assemblies_parts", id: false, force: :cascade do |t|
@@ -31,6 +33,8 @@ ActiveRecord::Schema.define(version: 2018_10_25_141127) do
     t.string "part_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "{:foreign_key=>true}_id"
+    t.index ["{:foreign_key=>true}_id"], name: "index_parts_on_{:foreign_key=>true}_id"
   end
 
 end
